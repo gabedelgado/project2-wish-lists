@@ -1,0 +1,13 @@
+<a href="/rooms/create">Create a room</a>
+<h1>Your Rooms</h1>
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
+{{#each rooms}}
+<div class="singleRoomDiv">
+    <p>{{this.name}}</p>
+    <p>{{this.description}}</p>
+    <br>
+    <a href="/rooms/{{this._id}}">View Room</a>
+</div>
+{{/each}}

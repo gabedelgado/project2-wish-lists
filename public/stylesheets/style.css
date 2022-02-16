@@ -1,0 +1,38 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+  margin-right: 20px;
+}
+
+h1 {
+  color: 15px;
+  margin-top: 30px;
+}
+
+.singleRoomDiv {
+  margin-top: 50px;
+}
+
+.wishListDiv {
+  margin: 30px;
+  border: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  width: 300px
+}
+
+.wishListDiv h5 {
+  margin: 15px;
+}
+
+.wishDiv {
+  margin: 15px;
+}
+
+p {
+  margin: 0
+}

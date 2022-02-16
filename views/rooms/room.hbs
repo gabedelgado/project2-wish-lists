@@ -1,0 +1,50 @@
+<h4>Room Name: {{room.name}}</h4>
+<p>{{room.description}}</p>
+
+{{!-- LISTS ALL WISHLIST HERE --}}
+<div class="papaWishListDiv">
+    {{#each room.wishLists}}
+    <div class="wishListDiv">
+        <h5>{{this.listOwner.fullName}}'s Wish List</h5>
+        {{#each this.wishes}}
+        <div class="wishDiv">
+            <p>Wish: {{this.itemName}}</p>
+            <p>Description: {{this.description}}</p>
+            <p>Link: {{#if this.otherURL}} <a href="{{this.otherURL}}">{{this.otherURL}}</a>{{/if}}</p>
+            {{#ifNotEquals this.wishOwner ../../currentUser}}    
+                {{#if this.claimed}}
+                    <p>This gift was claimed by: {{this.claimedByName}}</p>
+                {{else}}
+                <form action="/rooms/{{../../room._id}}/{{this._id}}/claim" method="post">
+                    <button type="submit">Claim this gift</button>
+                </form>
+                {{/if}}
+            {{/ifNotEquals}}
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+</div>
+
+<h4>Add registered users to the room</h4>
+<form action="/rooms/{{room._id}}/add-user" method="post">
+    <label for="newUser"> New User Email
+        <input type="text" name="newUser" placeholder="User Email">
+    </label>
+    <button type="submit">Add User</button>
+</form>
+
+<h4>Add to Your Wishlist</h4>
+<form action="/rooms/{{room._id}}/createwish" method="post">
+    <label for="itemName"> Item Name
+        <input type="text" name="itemName" placeholder="Item Name">
+    </label>
+    <label for="description"> Optional Description
+        <input type="text" name="description" placeholder="Optional Description">
+    </label>
+    <label for="otherURL"> Link to Item
+        <input type="text" name="otherURL" placeholder="Optional Link to Item">
+    </label>
+    <button type="submit">Add Wish!</button>
+</form> 
+

@@ -36,3 +36,21 @@ h1 {
 p {
   margin: 0
 }
+
+.editUsers {
+  margin: 10px;
+}
+
+.editUsers button {
+  margin-top: 8px;
+}
+
+.closeRoom {
+  margin: 10px;
+}
+
+.closeRoom button {
+  background-color: red;
+  color: white;
+
+}

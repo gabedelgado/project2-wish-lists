@@ -1,6 +1,10 @@
 <h4>Room Name: {{room.name}}</h4>
 <p>{{room.description}}</p>
 
+{{#ifEquals room.roomOwner currentUser}}
+<a href="/rooms/{{room._id}}/edit">Edit Room</a>
+{{/ifEquals}}
+
 {{!-- LISTS ALL WISHLIST HERE --}}
 <div class="papaWishListDiv">
     {{#each room.wishLists}}
@@ -10,10 +14,13 @@
         <div class="wishDiv">
             <p>Wish: {{this.itemName}}</p>
             <p>Description: {{this.description}}</p>
-            <p>Link: {{#if this.otherURL}} <a href="{{this.otherURL}}">{{this.otherURL}}</a>{{/if}}</p>
+            {{#if this.otherURL}}<p>User Provided Link: <a href="{{this.otherURL}}">{{this.otherURL}}</a></p>{{/if}}
+            {{#if this.amazonURL}}<p>Amazon Link: <a href="{{this.amazonURL}}">Check out the item on Amazon</a></p> {{/if}}
+            {{#if this.amazonPrice}} <p>Amazon Price: {{this.amazonPrice}}</p> {{/if}}
+            {{#if this.amazonImageURL}} <img src="{{this.amazonImageURL}}" alt="amazon-img">{{/if}}
             {{#ifNotEquals this.wishOwner ../../currentUser}}    
                 {{#if this.claimed}}
-                    <p>This gift was claimed by: {{this.claimedByName}}</p>
+                    <p>This gift has been claimed!</p>
                 {{else}}
                 <form action="/rooms/{{../../room._id}}/{{this._id}}/claim" method="post">
                     <button type="submit">Claim this gift</button>
@@ -21,6 +28,7 @@
                 {{/if}}
             {{/ifNotEquals}}
         </div>
+        <hr>
         {{/each}}
     </div>
     {{/each}}
@@ -42,7 +50,10 @@
     <label for="description"> Optional Description
         <input type="text" name="description" placeholder="Optional Description">
     </label>
-    <label for="otherURL"> Link to Item
+    <label for="amazonURL"> Link to Item on Amazon
+        <input type="text" name="amazonURL" placeholder="Link to Item on Amazon">
+    </label>
+    <label for="otherURL"> General Link to Item
         <input type="text" name="otherURL" placeholder="Optional Link to Item">
     </label>
     <button type="submit">Add Wish!</button>

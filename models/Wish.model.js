@@ -8,7 +8,9 @@ const wishSchema = new Schema(
       ref: "User",
     },
     itemName: { type: String, required: true },
-    amazonID: { type: String }, // NEED TO FIGURE OUT AND RESEARCH AMAZON API
+    amazonURL: { type: String },
+    amazonPrice: { type: String },
+    amazonImageURL: { type: String }, // NEED TO FIGURE OUT AND RESEARCH AMAZON API
     description: { type: String },
     otherURL: { type: String },
     claimed: { type: Boolean, default: false },

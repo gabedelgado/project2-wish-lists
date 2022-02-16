@@ -13,17 +13,19 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 hbs.registerHelper("ifNotEquals", function (arg1, arg2, options) {
-  console.log(arg1);
-  console.log(arg2);
   return arg1.toString() !== arg2.toString()
     ? options.fn(this)
     : options.inverse(this);
 });
 hbs.registerHelper("getFullNameFromID", (id) => {
   User.findById(id).then((user) => {
-    console.log("FROM HELPER", user);
     return user.fullName;
   });
+});
+hbs.registerHelper("ifEquals", function (arg1, arg2, options) {
+  return arg1.toString() === arg2.toString()
+    ? options.fn(this)
+    : options.inverse(this);
 });
 
 const app = express();

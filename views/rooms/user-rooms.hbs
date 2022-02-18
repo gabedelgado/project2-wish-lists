@@ -1,13 +1,17 @@
-<a href="/rooms/create">Create a room</a>
-<h1>Your Rooms</h1>
+<div class="userRoomsHeader">
+    <h2>Your Rooms</h1>
+    <a href="/rooms/create">+ Create a room</a>
+</div>
 {{#if errorMessage}}
 <p>{{errorMessage}}</p>
 {{/if}}
-{{#each rooms}}
-<div class="singleRoomDiv">
-    <p>{{this.name}}</p>
-    <p>{{this.description}}</p>
-    <br>
-    <a href="/rooms/{{this._id}}">View Room</a>
+<div class="container roomsViewDiv">
+    <div class="row">
+        {{#each rooms}}
+        <div class="singleRoomDiv col-4">
+            <a href="/rooms/{{this._id}}">{{this.name}}</a>
+            <p>{{this.description}}</p>
+        </div>
+        {{/each}}
+    </div>
 </div>
-{{/each}}

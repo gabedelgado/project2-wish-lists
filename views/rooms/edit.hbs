@@ -1,18 +1,18 @@
 <h1>Editing {{room.name}}</h1>
 <form class="editRoomNames" action="/rooms/{{room._id}}/edit" method="post">
-    <input type="text" name="name" value="{{room.name}}" placeholder="Room Name">
-    <input type="text" name="description" value="{{room.description}}" placeholder="Room Description">
-    <button type="submit">Update</button>
+    <input class="form-control login" type="text" name="name" value="{{room.name}}" placeholder="Room Name">
+    <input class="form-control login" type="text" name="description" value="{{room.description}}" placeholder="Room Description">
+    <button class="btn btn-primary" type="submit">Update</button>
 </form>
 <h4>Edit Users</h4>
 {{#each room.users}}
 {{#ifNotEquals ../room.roomOwner this._id}}
 <form class="editUsers" action="/rooms/{{../room._id}}/{{this._id}}/delete" method="post">
-    <button type="submit">Remove {{this.fullName}} from room</button>
+    <button class="btn btn-primary" type="submit">Remove {{this.fullName}} from room</button>
 </form>
 {{/ifNotEquals}}
 {{/each}}
 <h4>Close the Room: {{room.name}}</h4>
 <form class="closeRoom" action="/rooms/{{room._id}}/delete" method="post">
-    <button type="submit">Close Room</button>
+    <button class="btn btn-primary" type="submit">Close Room</button>
 </form>

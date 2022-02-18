@@ -1,20 +1,46 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #cfbfa9;
+  color: #0b5a0b;
 }
 
 a {
-  color: #00b7ff;
+  color: #0b5a0b;
   margin-right: 20px;
+  text-decoration: none;
+  font-weight:bolder;
+  font-size: 20px;
+}
+
+button {
+  background-color: #0b5a0b !important;
+}
+
+button:hover {
+  background-color: #bf3539 !important;
+}
+
+
+a:hover {
+  color: #bf3539
 }
 
 h1 {
-  color: 15px;
-  margin-top: 30px;
+  color: #0b5a0b;
+  font-weight: bolder;
+}
+
+h2 {
+  font-weight: bolder;
 }
 
 .singleRoomDiv {
-  margin-top: 50px;
+  margin-top: 70px;
+}
+
+.singleRoomDiv p {
+  margin-top: 10px;
+  font-size: larger;
 }
 
 .wishListDiv {
@@ -22,11 +48,12 @@ h1 {
   border: 3px;
   border-style: solid;
   border-radius: 10px;
-  width: 300px
+  width: 450px
 }
 
-.wishListDiv h5 {
+.wishListDiv h3 {
   margin: 15px;
+  font-weight: bolder;
 }
 
 .wishDiv {
@@ -50,7 +77,169 @@ p {
 }
 
 .closeRoom button {
-  background-color: red;
+  background-color: red !important;
   color: white;
+}
 
+.navDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+
+}
+
+.homepageDiv {
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.homepageDiv p {
+  font-size: 24px;
+}
+
+.homepageDiv h2 {
+  font-size: 45px;
+}
+
+.papaNavDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.papaHomepageDiv {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  width: 300px;
+  margin-top: 15px;
+}
+
+
+.loginDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.papaLoginDiv {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.userRoomsHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px
+}
+
+.roomsViewDiv {
+  width: 70%;
+}
+
+.roomDetailHeaderDiv {
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.roomDetailHeaderDiv p {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+
+.papaWishListDiv {
+  width: 70%;
+}
+
+.headerEditDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.editAreaButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editAreaButton a {
+  margin-left: 5px;
+}
+
+.addUserInputs {
+  display: flex;
+}
+
+.addUserInputs input {
+  margin-top: 0;
+  margin-right: 5px;
+}
+
+.addUserDiv {
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.addWishDiv {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.addWishDiv button {
+  margin-top: 15px;
+}
+
+.itemDetails {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.wishDiv a {
+  font-size: 17px;
+  margin-top: 15px;
+}
+
+.amazonLink {
+
+  display: flex;
+  justify-content: center;
+}
+
+
+.itemName {
+  font-size: 20px ;
+  font-weight: bolder;
+}
+
+hr {
+  width: 100%;
+  opacity: 90%;
+}
+
+.amazonInfoDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

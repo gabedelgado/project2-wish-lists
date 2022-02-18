@@ -1,15 +1,13 @@
 <form action="/auth/signup" method="POST">
-   <label> Email
-      <input type="email" name="email" required>
-   </label>
-   <label> Password
-      <input type="password" name="password" required>
-   </label>
-   <label> Full Name
-      <input type="text" name="fullName" required>
-   </label>
-
-   <button type="submit">Submit</button>
+      <div class="papaLoginDiv">
+         <div class="loginDiv">
+            <h2>Sign Up</h2>
+            <input type="email" name="email" required class="form-control login" required placeholder="Email">
+            <input type="password" name="password" required class="form-control login" required placeholder="Password">
+            <input type="text" name="fullName" required class="form-control login" required placeholder="First and Last Name">
+               <button type="submit" class="btn btn-primary login">Sign Up</button>
+         </div>
+      </div>
 </form>
 
 {{#if errorMessage}}

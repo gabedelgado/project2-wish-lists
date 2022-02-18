@@ -1,12 +1,12 @@
 <form action="/auth/login" method="POST">
-   <label> Email
-      <input type="email" name="email" required>
-   </label>
-   <label> Password
-      <input type="password" name="password" required>
-   </label>
-
-   <button type="submit">Submit</button>
+      <div class="papaLoginDiv">
+         <div class="loginDiv">
+            <h2>Log In</h2>
+            <input type="email" name="email" class="form-control login" required placeholder="Email">
+            <input type="password" name="password" class="form-control login" required placeholder="Password">
+               <button type="submit" class="btn btn-primary login">Log In</button>
+         </div>
+      </div>
 </form>
 
 {{#if errorMessage}}

@@ -39,13 +39,15 @@
                 </div>
                 {{#if this.amazonURL}}<a class="amazonLink" href="{{this.amazonURL}}">View the item on Amazon</a>{{/if}}
                 {{#ifNotEquals this.wishOwner ../../currentUser}}
-                    {{#if this.claimed}}
-                        <p class="itemDetails">This gift has been claimed!</p>
-                    {{else}}
-                    <form action="/rooms/{{../../room._id}}/{{this._id}}/claim" method="post">
-                        <button class="btn btn-primary" type="submit">Claim this gift</button>
-                    </form>
-                    {{/if}}
+                    <div class="claimedArea">
+                        {{#if this.claimed}}
+                            <p class="itemDetails">This gift has been claimed!</p>
+                        {{else}}
+                        <form action="/rooms/{{../../room._id}}/{{this._id}}/claim" method="post">
+                            <button class="btn btn-primary" type="submit">Claim this gift</button>
+                        </form>
+                        {{/if}}
+                    </div>
                 {{/ifNotEquals}}
             </div>
             <hr>

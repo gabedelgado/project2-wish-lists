@@ -243,3 +243,9 @@ hr {
   justify-content: space-between;
   align-items: center;
 }
+
+.claimedArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

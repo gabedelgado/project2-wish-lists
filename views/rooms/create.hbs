@@ -2,11 +2,11 @@
 <p>{{errorMessage}}</p>
 {{/if}}
 <form action="/rooms/create" method="post">
-    <label for="name"> Room Name
-        <input type="text" name="name" placeholder="Room Name">
-    </label>
-    <label for="description"> Room Description
-        <input type="text" name="description" placeholder="Optional Room Description">
-    </label>
-    <button type="submit">Create Room</button>
+        <div class="papaLoginDiv">
+            <div class="loginDiv">
+                <input class="form-control login" type="text" name="name" placeholder="Room Name">
+                <input class="form-control login" type="text" name="description" placeholder="Optional Room Description">
+                    <button class="btn btn-primary login" type="submit">Create Room</button>
+            </div>
+        </div>
 </form>
